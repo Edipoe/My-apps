@@ -1,6 +1,7 @@
 import random
 import colorama
 
+
 check = []
 play_again = None
 winner = None
@@ -118,15 +119,11 @@ class Game:
             print(f"The winner is {winner}")
         elif test_board[9] == test_board[6] == test_board[3] and test_board[9] != " ":
             winner = test_board[9]
-            print(f"The winn    er is {winner}")
+            print(f"The winner is {winner}")
 
     def game_loop(self):
         play_again = input("Do you wanna play again?").upper().startswith("Y")
         return play_again
-
-##############################################################################
-
-
 
 
 
@@ -153,18 +150,16 @@ while not game_over:
 
             rando = Player()
             rando.rand_choose()
-            # ALEGEREA LA INTAMPLARE A PRIMULUI JUCATOR CARE INCEPE(DACA JUCATORUL E PLAYER 1:)
+
             if rando.choose.upper() == "PLAYER 1":
                 first_player = "PLAYER 1"
                 second_player = "PLAYER 2"
-
                 print(colorama.Fore.YELLOW + "\nPlayer 1" + colorama.Style.RESET_ALL + " wil start first")
-                # JUCATORUL CARE E ALES LA INTAMPLARE ESTE INTREBAT CE VREA SA FIE (X SAU 0)
                 rando.ask_X_or_O()
-                #IN FUNCTIE DE ALEGERE A PRIMULUI JUCATOR, STABILIM CINE E X SI 0 SI STABILIM MARCATORI
+
                 if rando.ask.upper() == "X":
                     print(f"PLayer 1 is {rando.ask.upper()} and player 2 is O")
-                    markerply1 = "X"    #markply1 -cine incepe primul
+                    markerply1 = "X"
                     markerply2 = "O"
                 elif rando.ask.upper() == "O":
                     print(f"PLayer 1 is {rando.ask.upper()} and player 2 is X")
@@ -172,7 +167,7 @@ while not game_over:
                     markerply2 = "X"
 
 
-            # DACA JUCATORUL ALES LA INTAMPLARE E PLAYER 2(IDEM COD PLAYER 1)
+
             elif rando.choose.upper() == "PLAYER 2":
                 first_player = "PLAYER 2"
                 second_player = "PLAYER 1"
